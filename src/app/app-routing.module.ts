@@ -5,7 +5,7 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 
 
 const routes: Routes = [

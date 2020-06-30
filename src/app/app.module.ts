@@ -7,7 +7,7 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { EmployeesModule } from './employees/employees.module';
 
 @NgModule({
   declarations: [
@@ -16,11 +16,11 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     SecondComponent,
     PageNotFoundComponent,
     TasksListComponent,
-    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    EmployeesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
