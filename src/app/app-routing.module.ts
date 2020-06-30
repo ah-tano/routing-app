@@ -5,14 +5,12 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
-import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 
 
 const routes: Routes = [
   { path: 'first-component', component: FirstComponent },
   { path: 'second-component', component: SecondComponent },
   { path: 'tasks-list', component: TasksListComponent },
-  { path: 'employee-list', component: EmployeeListComponent },
   { path: '',   redirectTo: '/tasks-list', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

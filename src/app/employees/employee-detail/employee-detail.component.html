@@ -1,9 +1,13 @@
-<div *ngIf="employee">
-  <h2>{{employee.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{employee.id}}</div>
+<h2>Employees</h2>
+<div *ngIf="employee$ | async as employee">
+  <h3>"{{ employee.name }}"</h3>
   <div>
-    <label>name:
-      <input [(ngModel)]="employee.name" placeholder="name"/>
-    </label>
+    <label>Id: </label>{{ employee.id }}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="employee.name" placeholder="name"/>
   </div>
+  <p>
+    <button (click)="gotoEmployees(employee)">Back</button>
+  </p>
 </div>

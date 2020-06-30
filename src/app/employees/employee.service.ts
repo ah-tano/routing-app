@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 
 import { Employee } from './employee';
 import { EMPLOYEES } from './mock-employees';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -15,5 +16,11 @@ export class EmployeeService {
 
   getEmployees(): Observable<Employee[]> {
     return of(EMPLOYEES);
+  }
+
+  getEmployee(id: number | string) {
+    return this.getEmployees().pipe(
+      map((employees: Employee[]) => employees.find(employee => employee.id === +id))
+    );
   }
 }

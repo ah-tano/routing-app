@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
@@ -13,10 +17,21 @@ export class EmployeeListComponent implements OnInit {
   selectedEmployee: Employee;
   employees: Employee[];
 
-  constructor(private employeeService: EmployeeService) { }
+  employees$: Observable<Employee[]>;
+  selectedId: number;
+
+  constructor(
+    private employeeService: EmployeeService,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
-    this.getEmployees();
+    this.employees$ = this.route.paramMap.pipe(
+      switchMap(params => {
+        this.selectedId = +params.get('id');
+        return this.employeeService.getEmployees()
+      })
+    );
   }
 
   onSelect(employee: Employee): void {

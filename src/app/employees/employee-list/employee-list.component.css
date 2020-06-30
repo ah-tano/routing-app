@@ -1,0 +1,7 @@
+.employees li.selected {
+  background-color: #ececec;
+  color: white;
+}
+.employees li.selected:hover {
+  background-color: #bbd8dc;
+}

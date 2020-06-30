@@ -1,10 +1,11 @@
 <h2>EMPLOYEES LIST</h2>
 <ul class="employees">
-  <li *ngFor="let employee of employees"
-      [class.selected]="employee === selectedEmployee"
-      (click)="onSelect(employee)"
-  >
+  <li *ngFor="let employee of  employees$ | async" [class.selected]="employee.id === selectedId">
+    <a [routerLink]="['/employee', employee.id]">
     <span class="employees__badge">{{ employee.id }}</span> {{ employee.name }}
+    </a>
   </li>
 </ul>
+
+
 
