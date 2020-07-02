@@ -1,11 +1,14 @@
-<h1>Angular Router App</h1>
-<nav>
-  <a routerLink="/tasks-board" routerLinkActive="active">Tasks Board</a>
-  <a routerLink="/company-employees" routerLinkActive="active">Employees List</a>
-  <a routerLink="/admin" routerLinkActive="active">Admin</a>
-  <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
-</nav>
-<div [@routeAnimation]="getAnimationData(routerOutlet)">
-  <router-outlet #routerOutlet="outlet"></router-outlet>
+<div class="container">
+  <h1 class="header">Management App</h1>
+    <nav class="nav">
+      <a class="nav--link" routerLink="/tasks-board" routerLinkActive="active">Tasks Board</a>
+      <a class="nav--link" routerLink="/company-employees" routerLinkActive="active">Employees List</a>
+      <a class="nav--link" routerLink="/admin" routerLinkActive="active">Admin</a>
+      <a class="nav--link" [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
+    </nav>
+  <div [@routeAnimation]="getAnimationData(routerOutlet)">
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+  </div>
+  <router-outlet name="popup"></router-outlet>
+
 </div>
-<router-outlet name="popup"></router-outlet>

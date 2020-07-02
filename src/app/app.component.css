@@ -1,0 +1,38 @@
+.container {
+  max-width: 1015px;
+  margin: 0 auto;
+  padding: 30px;
+  border-right: 1px solid #f3f3f3;
+  border-bottom: 1px solid #f3f3f3;
+  box-shadow: 0 0 2px 0 #e5e5e5;
+  color: #313131;
+}
+
+.header {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav--link {
+  display: inline-block;
+  padding-right: 30px;
+  border-right: 1px solid #545454;
+  color: #d70086;
+}
+
+.nav--link:last-of-type {
+  border-right: none;
+}
+
+.nav--link:hover {
+  cursor: pointer;
+  transition: color .12s ease-in-out;
+  color: #b7b7b7;
+}

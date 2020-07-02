@@ -1,0 +1,51 @@
+.task {
+  width: 650px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.task--item {
+  position: relative;
+  width: 650px;
+  padding: 7px 0;
+  margin-bottom: 2px;
+  border: 1px solid #e7e7e7;
+  box-shadow: 1px 1px 1px 0 #e5e5e5;
+}
+
+.task--item:hover {
+  cursor: pointer;
+  background-color: #f8f8f8;
+}
+
+.task--link {
+  display: block;
+  width: 650px;
+  color: #313131;
+}
+
+.task--link:visited {
+  color: #313131;
+}
+
+.task--link:active {
+  color: #b7b7b7;
+}
+
+.task--badge {
+  display: inline-block;
+  color: #f3f3f3;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 20px;
+  text-align: center;
+  margin-right: .8em;
+  border-radius: 50%
+}
+
+

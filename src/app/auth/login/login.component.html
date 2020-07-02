@@ -1,6 +1,8 @@
-<h2>LOGIN</h2>
-<p>{{message}}</p>
+<div class="container">
+<h2 class="header">LOGIN</h2>
+<p class="message">{{message}}</p>
 <p>
-  <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-  <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+  <button class="log-btn" (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
+  <button class="log-btn" (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
 </p>
+</div>

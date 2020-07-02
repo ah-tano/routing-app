@@ -1,8 +1,8 @@
 <ul class="task">
-  <li *ngFor="let task of tasks$ | async"
+  <li class="task--item" *ngFor="let task of tasks$ | async"
       [class.selected]="task.id === selectedId">
-    <a [routerLink]="[task.id]">
-      <span class="badge">{{ task.id }} </span>{{ task.name }}
+    <a class="task--link" [routerLink]="[task.id]">
+      <span class="task--badge">{{ task.id }} </span>{{ task.name }}
     </a>
   </li>
 </ul>

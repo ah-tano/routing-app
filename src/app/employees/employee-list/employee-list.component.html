@@ -1,8 +1,8 @@
-<h2>EMPLOYEES LIST</h2>
-<ul class="employees">
-  <li *ngFor="let employee of  employees$ | async" [class.selected]="employee.id === selectedId">
-    <a [routerLink]="['/employee', employee.id]">
-    <span class="employees__badge">{{ employee.id }}</span> {{ employee.name }}
+<h2 class="header">EMPLOYEES LIST</h2>
+<ul class="employee">
+  <li class="employee--item" *ngFor="let employee of  employees$ | async" [class.selected]="employee.id === selectedId">
+    <a class="employee--link" [routerLink]="['/employee', employee.id]">
+    <span class="employee--badge">{{ employee.id }}</span> {{ employee.name }}
     </a>
   </li>
 </ul>
