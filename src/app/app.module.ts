@@ -4,17 +4,17 @@ import { NgModule } from '@angular/core';
 import { FormsModule }    from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { TasksModule } from './tasks/tasks.module';
 import { EmployeesModule } from './employees/employees.module';
 
-import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
 
+import { Router } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
+
 
 
 @NgModule({
@@ -29,12 +29,16 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
     FormsModule,
     CommonModule,
     EmployeesModule,
-    TasksModule,
-    AdminModule,
     AuthModule,
     AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(router: Router) {
+    const replacer = (key, value) => (typeof value === 'function') ? value.name : value;
+
+    console.log('Routes: ', JSON.stringify(router.config, replacer, 2));
+  }
+}

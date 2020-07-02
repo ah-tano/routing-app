@@ -6,8 +6,10 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 
 
 const employeesRouts: Routes = [
-  { path: 'employee-list', component: EmployeeListComponent, data: { animation: 'employee-list' } },
-  { path: 'employee/:id', component: EmployeeDetailComponent, data: { animation: 'employee' } },
+  { path: 'employee-list', redirectTo: 'company-employees' },
+  { path: 'employee/:id', redirectTo: 'company-employee/:id' },
+  { path: 'company-employees', component: EmployeeListComponent, data: { animation: 'employee-list' } },
+  { path: 'company-employee/:id', component: EmployeeDetailComponent, data: { animation: 'employee' } },
 ];
 
 @NgModule({

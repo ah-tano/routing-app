@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Task } from '../task';
+import { Observable } from 'rxjs';
+import { DialogService } from '../../dialog.service';
 
 @Component({
   selector: 'app-task-detail',
@@ -16,6 +18,7 @@ export class TaskDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    public dialogService: DialogService,
   ) { }
 
   ngOnInit() {
@@ -35,8 +38,18 @@ export class TaskDetailComponent implements OnInit {
     this.gotoTasks();
   };
 
+  canDeactivate(): Observable<boolean> | boolean {
+    if (!this.task || this.task.name === this.editName) {
+      return true;
+    }
+
+    return this.dialogService.confirm('Discard changes?');
+  }
+
   gotoTasks() {
     let taskId = this.task ? this.task.id : null;
-    this.router.navigate(['../', { id: taskId, foo: 'foo' }], { relativeTo: this.route })
+    this.router.navigate(['../', { id: taskId, foo: 'foo' }], {
+      relativeTo: this.route
+    });
   }
 }

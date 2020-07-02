@@ -2,9 +2,11 @@
   <li *ngFor="let task of tasks$ | async"
       [class.selected]="task.id === selectedId">
     <a [routerLink]="[task.id]">
-      <span class="badge">{{ task.id }}</span>{{ task.name }}
+      <span class="badge">{{ task.id }} </span>{{ task.name }}
     </a>
   </li>
 </ul>
 
+<!--add task-board component-->
+<!--add task-detail component-->
 <router-outlet></router-outlet>

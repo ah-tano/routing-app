@@ -6,9 +6,12 @@ import { TasksBoardComponent } from './tasks-board/tasks-board.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
 
+import { CanDeactivateGuard } from '../can-deactivate.guard';
+import { TaskDetailResolverService } from './task-detail-resolver.service';
+
 const tasksRoutes: Routes = [
   {
-    path: 'tasks-board',
+    path: '',
     component: TasksBoardComponent,
     children: [
       {
@@ -17,7 +20,11 @@ const tasksRoutes: Routes = [
         children: [
           {
             path: ':id',
-            component: TaskDetailComponent
+            component: TaskDetailComponent,
+            canDeactivate: [CanDeactivateGuard],
+            resolve: {
+              task: TaskDetailResolverService
+            }
           },
           {
             path: '',

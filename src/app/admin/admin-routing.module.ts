@@ -11,12 +11,13 @@ import { AuthGuard } from '../auth/auth.guard';
 
 const adminRoutes: Routes = [
   {
-    path: 'admin',
+    path: '',
     component: AdminComponent,
     canActivate: [AuthGuard],
     children: [
       {
         path: '',
+        canActivateChild: [AuthGuard],
         children: [
           { path: 'tasks', component: ManageTasksComponent },
           { path: 'employees', component: ManageEmployeesComponent },
