@@ -8,12 +8,14 @@ import { TasksModule } from './tasks/tasks.module';
 import { EmployeesModule } from './employees/employees.module';
 
 import { AdminModule } from './admin/admin.module';
+import { AuthModule } from './auth/auth.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
     EmployeesModule,
     TasksModule,
     AdminModule,
+    AuthModule,
     AppRoutingModule,
   ],
   providers: [],
