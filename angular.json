@@ -9,10 +9,17 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "fr": "src/locale/messages.fr.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": true,
             "outputPath": "dist/routing-app",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -56,6 +63,11 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "fr": {
+              "localize": [
+                "fr"
+              ]
             }
           }
         },
@@ -67,6 +79,9 @@
           "configurations": {
             "production": {
               "browserTarget": "routing-app:build:production"
+            },
+            "fr": {
+              "browserTarget": "routing-app:build:fr"
             }
           }
         },
