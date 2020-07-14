@@ -65,9 +65,12 @@
               ]
             },
             "fr": {
-              "localize": [
-                "fr"
-              ]
+                "localize": ["fr"],
+                "baseHref": "/fr/"
+            },
+            "en": {
+              "localize": ["en"],
+              "baseHref": "/en/"
             }
           }
         },
@@ -79,6 +82,9 @@
           "configurations": {
             "production": {
               "browserTarget": "routing-app:build:production"
+            },
+            "en": {
+              "browserTarget": "routing-app:build:en"
             },
             "fr": {
               "browserTarget": "routing-app:build:fr"
